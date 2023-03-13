@@ -14,27 +14,27 @@ public class RSVPService {
     @Autowired
     RSVPRepository rsvpRepo;
 
-    // #1
+    // #1 Get number of RSVPs
     public Integer countAll() {
         return rsvpRepo.countAll();
     }
 
-    // #2 
+    // #2 Get All RSVPs
     public List<RSVP> findAll() {
         return rsvpRepo.findAll();
     }
 
-    // #3
+    // #3 Get RSVP by ID
     public RSVP selectById(Integer id) {
         return rsvpRepo.selectById(id);
     }
 
-    // #4
+    // #4 Get RSVP by Name
     public RSVP findByName(String fullname) {
         return rsvpRepo.findByName(fullname);
     }
 
-    // #5
+    // #5 Get RSVP by Name
     public Boolean save(RSVP rsvp) {
         return rsvpRepo.save(rsvp);
     }

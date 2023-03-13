@@ -28,7 +28,7 @@ public class RSVPRepository {
                 "confirmation_date = ?, comments = ?" +
                 "where id = ?";
 
-    // #1
+    // #1 Get number of RSVPs
     public Integer countAll() {
         return jdbcTemplate.queryForObject(countSQL, Integer.class);
     }
@@ -48,7 +48,7 @@ public class RSVPRepository {
         return jdbcTemplate.queryForObject(selectByNameSQL, BeanPropertyRowMapper.newInstance(RSVP.class), fullname);
     }
 
-    // #5 Save a new RSVP
+    // #5 Get RSVP by Name
     public Boolean save(RSVP rsvp) {
         Integer iResult = jdbcTemplate.update(insertSQL, rsvp.getFullName(), rsvp.getEmail(), rsvp.getPhone(), rsvp.getConfirmationDate(), rsvp.getComments());
         return iResult > 0 ? true : false;
