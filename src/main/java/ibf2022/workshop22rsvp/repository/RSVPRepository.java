@@ -48,7 +48,7 @@ public class RSVPRepository {
         return jdbcTemplate.queryForObject(selectByNameSQL, BeanPropertyRowMapper.newInstance(RSVP.class), fullname);
     }
 
-    // #5 Get RSVP by Name
+    // #5 Create and save RSVP
     public Boolean save(RSVP rsvp) {
         Integer iResult = jdbcTemplate.update(insertSQL, rsvp.getFullName(), rsvp.getEmail(), rsvp.getPhone(), rsvp.getConfirmationDate(), rsvp.getComments());
         return iResult > 0 ? true : false;

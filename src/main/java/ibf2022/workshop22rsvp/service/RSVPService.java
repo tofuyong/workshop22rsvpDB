@@ -34,7 +34,7 @@ public class RSVPService {
         return rsvpRepo.findByName(fullname);
     }
 
-    // #5 Get RSVP by Name
+    // #5 Save a new RSVP
     public Boolean save(RSVP rsvp) {
         return rsvpRepo.save(rsvp);
     }
